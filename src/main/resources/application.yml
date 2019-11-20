@@ -3,6 +3,9 @@ server:
 spring:
   application:
     name: data-multidatasource
+  batch:
+    job:
+      enabled: false  
   datasource:
     src:
       type: com.alibaba.druid.pool.DruidDataSource 
@@ -17,3 +20,10 @@ spring:
       url: jdbc:mysql://localhost:3306/test?useUnicode=true&characterEncoding=utf8&characterSetResults=utf8&useSSL=false
       username: root
       password: 123456
+quartz: 
+  config:
+    quartzs:
+    - {batch-job-name: batchJob2,job-name: job1,job-group: job-group1,job-class: com.glodon.job.MyJob,trigger-name: trigger1,trigger-group: trigger-group1,cron-expression: '*/5 * * * * ?' } 
+    
+
+      
