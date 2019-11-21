@@ -1,0 +1,170 @@
+17:05:04.447 DEBUG org.hibernate.validator.messageinterpolation.ResourceBundleMessageInterpolator 89 buildExpressionFactory - Loaded expression factory via original TCCL
+17:05:04.454 DEBUG org.hibernate.validator.internal.engine.ValidatorFactoryImpl 578 logValidatorFactoryScopedConfiguration - HV000234: Using org.hibernate.validator.messageinterpolation.ResourceBundleMessageInterpolator as ValidatorFactory-scoped message interpolator.
+17:05:04.454 DEBUG org.hibernate.validator.internal.engine.ValidatorFactoryImpl 579 logValidatorFactoryScopedConfiguration - HV000234: Using org.hibernate.validator.internal.engine.resolver.TraverseAllTraversableResolver as ValidatorFactory-scoped traversable resolver.
+17:05:04.454 DEBUG org.hibernate.validator.internal.engine.ValidatorFactoryImpl 580 logValidatorFactoryScopedConfiguration - HV000234: Using org.hibernate.validator.internal.util.ExecutableParameterNameProvider as ValidatorFactory-scoped parameter name provider.
+17:05:04.455 DEBUG org.hibernate.validator.internal.engine.ValidatorFactoryImpl 581 logValidatorFactoryScopedConfiguration - HV000234: Using org.hibernate.validator.internal.engine.DefaultClockProvider as ValidatorFactory-scoped clock provider.
+17:05:04.455 DEBUG org.hibernate.validator.internal.engine.ValidatorFactoryImpl 582 logValidatorFactoryScopedConfiguration - HV000234: Using org.hibernate.validator.internal.engine.scripting.DefaultScriptEvaluatorFactory as ValidatorFactory-scoped script evaluator factory.
+17:05:04.477 INFO  org.springframework.boot.StartupInfoLogger 50 logStarting - Starting BatchApplication on liwk-b-pc01 with PID 1115424 (E:\government-workspace\batch\target\classes started by liwk-b in E:\government-workspace\batch)
+17:05:04.478 DEBUG org.springframework.boot.StartupInfoLogger 53 logStarting - Running with Spring Boot v2.0.8.RELEASE, Spring v5.0.12.RELEASE
+17:05:04.478 INFO  org.springframework.boot.SpringApplication 654 logStartupProfileInfo - No active profile set, falling back to default profiles: default
+17:05:04.539 INFO  org.springframework.context.support.AbstractApplicationContext 588 prepareRefresh - Refreshing org.springframework.boot.web.servlet.context.AnnotationConfigServletWebServerApplicationContext@702b8b12: startup date [Thu Nov 21 17:05:04 CST 2019]; root of context hierarchy
+17:05:05.207 INFO  org.springframework.context.support.PostProcessorRegistrationDelegate$BeanPostProcessorChecker 326 postProcessAfterInitialization - Bean 'mybatisSrcConfig' of type [com.glodon.config.MybatisSrcConfig$$EnhancerBySpringCGLIB$$f7f5f99e] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+17:05:05.214 INFO  org.springframework.context.support.PostProcessorRegistrationDelegate$BeanPostProcessorChecker 326 postProcessAfterInitialization - Bean 'org.springframework.transaction.annotation.ProxyTransactionManagementConfiguration' of type [org.springframework.transaction.annotation.ProxyTransactionManagementConfiguration$$EnhancerBySpringCGLIB$$a343b362] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+17:05:05.286 INFO  org.springframework.context.support.PostProcessorRegistrationDelegate$BeanPostProcessorChecker 326 postProcessAfterInitialization - Bean 'org.springframework.boot.context.properties.ConversionServiceDeducer$Factory' of type [org.springframework.boot.context.properties.ConversionServiceDeducer$Factory] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+17:05:05.301 INFO  org.springframework.context.support.PostProcessorRegistrationDelegate$BeanPostProcessorChecker 326 postProcessAfterInitialization - Bean 'spring.datasource-org.springframework.boot.autoconfigure.jdbc.DataSourceProperties' of type [org.springframework.boot.autoconfigure.jdbc.DataSourceProperties] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+17:05:05.307 INFO  org.springframework.context.support.PostProcessorRegistrationDelegate$BeanPostProcessorChecker 326 postProcessAfterInitialization - Bean 'com.alibaba.druid.spring.boot.autoconfigure.stat.DruidFilterConfiguration' of type [com.alibaba.druid.spring.boot.autoconfigure.stat.DruidFilterConfiguration] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+17:05:05.334 INFO  org.springframework.context.support.PostProcessorRegistrationDelegate$BeanPostProcessorChecker 326 postProcessAfterInitialization - Bean 'statFilter' of type [com.alibaba.druid.filter.stat.StatFilter] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+17:05:05.371 INFO  org.springframework.context.support.PostProcessorRegistrationDelegate$BeanPostProcessorChecker 326 postProcessAfterInitialization - Bean 'srcDataSource' of type [com.alibaba.druid.spring.boot.autoconfigure.DruidDataSourceWrapper] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+17:05:05.385 INFO  org.springframework.context.support.PostProcessorRegistrationDelegate$BeanPostProcessorChecker 326 postProcessAfterInitialization - Bean 'org.springframework.boot.autoconfigure.jdbc.DataSourceInitializerInvoker' of type [org.springframework.boot.autoconfigure.jdbc.DataSourceInitializerInvoker] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+17:05:05.392 INFO  org.springframework.context.support.PostProcessorRegistrationDelegate$BeanPostProcessorChecker 326 postProcessAfterInitialization - Bean 'resoucelessTransactionManager' of type [org.springframework.batch.support.transaction.ResourcelessTransactionManager] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+17:05:05.411 INFO  org.springframework.batch.core.launch.support.SimpleJobLauncher 204 afterPropertiesSet - No TaskExecutor has been set, defaulting to synchronous executor.
+17:05:05.412 INFO  org.springframework.context.support.PostProcessorRegistrationDelegate$BeanPostProcessorChecker 326 postProcessAfterInitialization - Bean 'batchConfiguration' of type [com.glodon.batch.config.BatchConfiguration$$EnhancerBySpringCGLIB$$11f00b3] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+17:05:05.418 INFO  org.springframework.context.support.PostProcessorRegistrationDelegate$BeanPostProcessorChecker 326 postProcessAfterInitialization - Bean 'org.springframework.batch.core.configuration.annotation.SimpleBatchConfiguration' of type [org.springframework.batch.core.configuration.annotation.SimpleBatchConfiguration$$EnhancerBySpringCGLIB$$a3068dc8] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+17:05:05.427 INFO  org.springframework.context.support.PostProcessorRegistrationDelegate$BeanPostProcessorChecker 326 postProcessAfterInitialization - Bean 'jobRegistry' of type [com.sun.proxy.$Proxy65] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+17:05:05.659 INFO  org.springframework.boot.web.embedded.tomcat.TomcatWebServer 91 initialize - Tomcat initialized with port(s): 9090 (http)
+17:05:05.668 INFO  org.apache.juli.logging.DirectJDKLog 180 log - Initializing ProtocolHandler ["http-nio-9090"]
+17:05:05.681 INFO  org.apache.juli.logging.DirectJDKLog 180 log - Starting service [Tomcat]
+17:05:05.682 INFO  org.apache.juli.logging.DirectJDKLog 180 log - Starting Servlet Engine: Apache Tomcat/8.5.37
+17:05:05.685 INFO  org.apache.juli.logging.DirectJDKLog 180 log - The APR based Apache Tomcat Native library which allows optimal performance in production environments was not found on the java.library.path: [D:\Program Files\Java\jdk1.8.0_31\bin;C:\windows\Sun\Java\bin;C:\windows\system32;C:\windows;C:\ProgramData\Oracle\Java\javapath;C:\windows\system32;C:\windows;C:\windows\System32\Wbem;C:\windows\System32\WindowsPowerShell\v1.0\;D:\Program Files\Java\jdk1.8.0_31\bin;D:\Program Files\TortoiseGit\bin;F:\glodon_soft\node-v10.15.0-win-x64;D:\Program Files\PuTTY\;D:\Program Files\TortoiseSVN\bin;F:\glodon_soft\apache-maven-3.5.0\bin;F:\glodon_soft\zookeeper\bin;F:\glodon_soft\curl-7.61.1-win64-mingw\bin;C:\Program Files (x86)\GnuWin32\bin;C:\Program Files (x86)\Tesseract-OCR;F:\glodon_soft\mysql-8.0.13-winx64\bin;C:\Program Files\erl10.2\bin;F:\glodon_soft\node-v10.15.0-win-x64;F:\glodon_soft\node-v10.15.0-win-x64\node_global;D:\Python\Python37\Scripts\;D:\Python\Python37\;C:\ProgramData\Oracle\Java\javapath;C:\windows\system32;C:\windows;C:\windows\System32\Wbem;C:\windows\System32\WindowsPowerShell\v1.0\;D:\Program Files\Java\jdk1.8.0_31\bin;D:\Program Files\TortoiseGit\bin;F:\glodon_soft\node-v10.15.0-win-x64;D:\Program Files\PuTTY\;D:\Program Files\TortoiseSVN\bin;F:\glodon_soft\apache-maven-3.5.0\bin;F:\glodon_soft\zookeeper\bin;F:\glodon_soft\curl-7.61.1-win64-mingw\bin;C:\Program Files (x86)\GnuWin32\bin;C:\Program Files (x86)\Tesseract-OCR;F:\glodon_soft\mysql-8.0.13-winx64\bin;C:\Program Files\erl10.2\bin;F:\glodon_soft\node-v10.15.0-win-x64;F:\glodon_soft\node-v10.15.0-win-x64\node_global;C:\Users\liwk-b\AppData\Local\Programs\Azure Data Studio\bin;.]
+17:05:05.774 INFO  org.apache.juli.logging.DirectJDKLog 180 log - Initializing Spring embedded WebApplicationContext
+17:05:05.775 INFO  org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext 296 prepareWebApplicationContext - Root WebApplicationContext: initialization completed in 1238 ms
+17:05:05.850 INFO  org.springframework.boot.web.servlet.ServletRegistrationBean 187 addRegistration - Servlet dispatcherServlet mapped to [/]
+17:05:05.851 INFO  org.springframework.boot.web.servlet.ServletRegistrationBean 187 addRegistration - Servlet statViewServlet mapped to [/druid/*]
+17:05:05.853 INFO  org.springframework.boot.web.servlet.AbstractFilterRegistrationBean 245 configure - Mapping filter: 'characterEncodingFilter' to: [/*]
+17:05:05.854 INFO  org.springframework.boot.web.servlet.AbstractFilterRegistrationBean 245 configure - Mapping filter: 'hiddenHttpMethodFilter' to: [/*]
+17:05:05.854 INFO  org.springframework.boot.web.servlet.AbstractFilterRegistrationBean 245 configure - Mapping filter: 'httpPutFormContentFilter' to: [/*]
+17:05:05.854 INFO  org.springframework.boot.web.servlet.AbstractFilterRegistrationBean 245 configure - Mapping filter: 'requestContextFilter' to: [/*]
+17:05:05.854 INFO  org.springframework.boot.web.servlet.AbstractFilterRegistrationBean 258 configure - Mapping filter: 'webStatFilter' to urls: [/*]
+17:05:06.013 INFO  com.alibaba.druid.pool.DruidDataSource 930 init - {dataSource-1} inited
+17:05:06.164 INFO  org.quartz.impl.StdSchedulerFactory 1208 instantiate - Using default implementation for ThreadExecutor
+17:05:06.174 INFO  org.quartz.core.SchedulerSignalerImpl 61 <init> - Initialized Scheduler Signaller of type: class org.quartz.core.SchedulerSignalerImpl
+17:05:06.174 INFO  org.quartz.core.QuartzScheduler 229 <init> - Quartz Scheduler v.2.3.0 created.
+17:05:06.175 INFO  org.quartz.simpl.RAMJobStore 155 initialize - RAMJobStore initialized.
+17:05:06.176 INFO  org.quartz.core.QuartzScheduler 294 initialize - Scheduler meta-data: Quartz Scheduler (v2.3.0) 'BATCH' with instanceId 'NON_CLUSTERED'
+  Scheduler class: 'org.quartz.core.QuartzScheduler' - running locally.
+  NOT STARTED.
+  Currently in standby mode.
+  Number of jobs executed: 0
+  Using thread pool 'org.quartz.simpl.SimpleThreadPool' - with 25 threads.
+  Using job-store 'org.quartz.simpl.RAMJobStore' - which does not support persistence. and is not clustered.
+
+17:05:06.176 INFO  org.quartz.impl.StdSchedulerFactory 1362 instantiate - Quartz scheduler 'BATCH' initialized from an externally provided properties instance.
+17:05:06.176 INFO  org.quartz.impl.StdSchedulerFactory 1366 instantiate - Quartz scheduler version: 2.3.0
+17:05:06.176 INFO  org.quartz.core.QuartzScheduler 547 start - Scheduler BATCH_$_NON_CLUSTERED started.
+17:05:06.176 DEBUG org.quartz.core.QuartzSchedulerThread 291 run - batch acquisition of 0 triggers
+17:05:06.188 INFO  com.glodon.quartz.config.JobInit 59 lambda$0 - 获取定时任务配置信息进行初始化 QuartzBean(batchJobName=corpJob, jobName=job1, jobGroup=job-group1, jobClass=com.glodon.quartz.job.impl.JobExecuteBatch, triggerName=trigger1, triggerGroup=trigger-group1, cronExpression=0 58 * * * ? *) 
+17:05:06.194 DEBUG org.quartz.core.QuartzSchedulerThread 291 run - batch acquisition of 0 triggers
+17:05:06.225 DEBUG org.apache.ibatis.logging.LogFactory 135 setImplementation - Logging initialized using 'class org.apache.ibatis.logging.slf4j.Slf4jImpl' adapter.
+17:05:06.403 INFO  com.glodon.batch.config.CorpBatch 57 corpStep - funcName2:::::: corpStep
+17:05:06.412 WARN  org.springframework.batch.core.listener.AbstractListenerFactoryBean 228 isListener - org.springframework.batch.item.ItemReader is an interface.  The implementing class will not be queried for annotation based listener configurations.  If using @StepScope on a @Bean method, be sure to return the implementing class so listener annotations can be used.
+17:05:06.433 INFO  com.glodon.batch.config.CorpBatch 47 corpJob - funcName1:::::: corpJob
+17:05:06.502 DEBUG org.hibernate.validator.internal.engine.resolver.TraversableResolvers 60 getDefault - Cannot find javax.persistence.Persistence on classpath. Assuming non JPA 2 environment. All properties will per default be traversable.
+17:05:06.502 DEBUG org.hibernate.validator.messageinterpolation.ResourceBundleMessageInterpolator 89 buildExpressionFactory - Loaded expression factory via original TCCL
+17:05:06.509 DEBUG org.hibernate.validator.internal.engine.resolver.TraversableResolvers 60 getDefault - Cannot find javax.persistence.Persistence on classpath. Assuming non JPA 2 environment. All properties will per default be traversable.
+17:05:06.510 DEBUG org.hibernate.validator.internal.engine.ConfigurationImpl 148 messageInterpolator - Setting custom MessageInterpolator of type org.springframework.validation.beanvalidation.LocaleContextMessageInterpolator
+17:05:06.510 DEBUG org.hibernate.validator.internal.engine.ConfigurationImpl 180 constraintValidatorFactory - Setting custom ConstraintValidatorFactory of type org.springframework.validation.beanvalidation.SpringConstraintValidatorFactory
+17:05:06.511 DEBUG org.hibernate.validator.internal.engine.ConfigurationImpl 194 parameterNameProvider - Setting custom ParameterNameProvider of type org.springframework.validation.beanvalidation.LocalValidatorFactoryBean$1
+17:05:06.512 DEBUG org.hibernate.validator.internal.xml.config.ValidationXmlParser 120 getValidationXmlInputStream - Trying to load META-INF/validation.xml for XML based Validator configuration.
+17:05:06.512 DEBUG org.hibernate.validator.internal.xml.config.ResourceLoaderHelper 53 getResettableInputStreamForPath - Trying to load META-INF/validation.xml via user class loader
+17:05:06.513 DEBUG org.hibernate.validator.internal.xml.config.ResourceLoaderHelper 60 getResettableInputStreamForPath - Trying to load META-INF/validation.xml via TCCL
+17:05:06.513 DEBUG org.hibernate.validator.internal.xml.config.ResourceLoaderHelper 66 getResettableInputStreamForPath - Trying to load META-INF/validation.xml via Hibernate Validator's class loader
+17:05:06.513 DEBUG org.hibernate.validator.internal.xml.config.ValidationXmlParser 127 getValidationXmlInputStream - No META-INF/validation.xml found. Using annotation based configuration only.
+17:05:06.516 DEBUG org.hibernate.validator.internal.engine.ValidatorFactoryImpl 578 logValidatorFactoryScopedConfiguration - HV000234: Using org.springframework.validation.beanvalidation.LocaleContextMessageInterpolator as ValidatorFactory-scoped message interpolator.
+17:05:06.516 DEBUG org.hibernate.validator.internal.engine.ValidatorFactoryImpl 579 logValidatorFactoryScopedConfiguration - HV000234: Using org.hibernate.validator.internal.engine.resolver.TraverseAllTraversableResolver as ValidatorFactory-scoped traversable resolver.
+17:05:06.517 DEBUG org.hibernate.validator.internal.engine.ValidatorFactoryImpl 580 logValidatorFactoryScopedConfiguration - HV000234: Using org.hibernate.validator.internal.util.ExecutableParameterNameProvider as ValidatorFactory-scoped parameter name provider.
+17:05:06.517 DEBUG org.hibernate.validator.internal.engine.ValidatorFactoryImpl 581 logValidatorFactoryScopedConfiguration - HV000234: Using org.hibernate.validator.internal.engine.DefaultClockProvider as ValidatorFactory-scoped clock provider.
+17:05:06.517 DEBUG org.hibernate.validator.internal.engine.ValidatorFactoryImpl 582 logValidatorFactoryScopedConfiguration - HV000234: Using org.hibernate.validator.internal.engine.scripting.DefaultScriptEvaluatorFactory as ValidatorFactory-scoped script evaluator factory.
+17:05:06.558 INFO  org.springframework.web.servlet.handler.AbstractUrlHandlerMapping 373 registerHandler - Mapped URL path [/**/favicon.ico] onto handler of type [class org.springframework.web.servlet.resource.ResourceHttpRequestHandler]
+17:05:06.712 INFO  org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter 588 initControllerAdviceCache - Looking for @ControllerAdvice: org.springframework.boot.web.servlet.context.AnnotationConfigServletWebServerApplicationContext@702b8b12: startup date [Thu Nov 21 17:05:04 CST 2019]; root of context hierarchy
+17:05:06.753 INFO  org.springframework.web.servlet.handler.AbstractHandlerMethodMapping$MappingRegistry 550 register - Mapped "{[/error]}" onto public org.springframework.http.ResponseEntity<java.util.Map<java.lang.String, java.lang.Object>> org.springframework.boot.autoconfigure.web.servlet.error.BasicErrorController.error(javax.servlet.http.HttpServletRequest)
+17:05:06.754 INFO  org.springframework.web.servlet.handler.AbstractHandlerMethodMapping$MappingRegistry 550 register - Mapped "{[/error],produces=[text/html]}" onto public org.springframework.web.servlet.ModelAndView org.springframework.boot.autoconfigure.web.servlet.error.BasicErrorController.errorHtml(javax.servlet.http.HttpServletRequest,javax.servlet.http.HttpServletResponse)
+17:05:06.773 INFO  org.springframework.web.servlet.handler.AbstractUrlHandlerMapping 373 registerHandler - Mapped URL path [/webjars/**] onto handler of type [class org.springframework.web.servlet.resource.ResourceHttpRequestHandler]
+17:05:06.773 INFO  org.springframework.web.servlet.handler.AbstractUrlHandlerMapping 373 registerHandler - Mapped URL path [/**] onto handler of type [class org.springframework.web.servlet.resource.ResourceHttpRequestHandler]
+17:05:06.936 INFO  org.quartz.impl.StdSchedulerFactory 1208 instantiate - Using default implementation for ThreadExecutor
+17:05:06.937 INFO  org.quartz.core.SchedulerSignalerImpl 61 <init> - Initialized Scheduler Signaller of type: class org.quartz.core.SchedulerSignalerImpl
+17:05:06.938 INFO  org.quartz.core.QuartzScheduler 229 <init> - Quartz Scheduler v.2.3.0 created.
+17:05:06.938 INFO  org.quartz.simpl.RAMJobStore 155 initialize - RAMJobStore initialized.
+17:05:06.938 INFO  org.quartz.core.QuartzScheduler 294 initialize - Scheduler meta-data: Quartz Scheduler (v2.3.0) 'quartzScheduler' with instanceId 'NON_CLUSTERED'
+  Scheduler class: 'org.quartz.core.QuartzScheduler' - running locally.
+  NOT STARTED.
+  Currently in standby mode.
+  Number of jobs executed: 0
+  Using thread pool 'org.quartz.simpl.SimpleThreadPool' - with 10 threads.
+  Using job-store 'org.quartz.simpl.RAMJobStore' - which does not support persistence. and is not clustered.
+
+17:05:06.938 INFO  org.quartz.impl.StdSchedulerFactory 1362 instantiate - Quartz scheduler 'quartzScheduler' initialized from an externally provided properties instance.
+17:05:06.938 INFO  org.quartz.impl.StdSchedulerFactory 1366 instantiate - Quartz scheduler version: 2.3.0
+17:05:06.938 INFO  org.quartz.core.QuartzScheduler 2287 setJobFactory - JobFactory set to: org.springframework.boot.autoconfigure.quartz.AutowireCapableBeanJobFactory@9fc9f91
+17:05:07.000 INFO  org.springframework.jmx.export.MBeanExporter 433 afterSingletonsInstantiated - Registering beans for JMX exposure on startup
+17:05:07.001 INFO  org.springframework.jmx.export.MBeanExporter 895 autodetect - Bean with name 'destDataSource' has been autodetected for JMX exposure
+17:05:07.001 INFO  org.springframework.jmx.export.MBeanExporter 895 autodetect - Bean with name 'srcDataSource' has been autodetected for JMX exposure
+17:05:07.002 INFO  org.springframework.jmx.export.MBeanExporter 895 autodetect - Bean with name 'statFilter' has been autodetected for JMX exposure
+17:05:07.005 INFO  org.springframework.jmx.export.MBeanExporter 668 registerBeanInstance - Located MBean 'destDataSource': registering with JMX server as MBean [com.alibaba.druid.spring.boot.autoconfigure:name=destDataSource,type=DruidDataSourceWrapper]
+17:05:07.006 INFO  org.springframework.jmx.export.MBeanExporter 668 registerBeanInstance - Located MBean 'srcDataSource': registering with JMX server as MBean [com.alibaba.druid.spring.boot.autoconfigure:name=srcDataSource,type=DruidDataSourceWrapper]
+17:05:07.007 INFO  org.springframework.jmx.export.MBeanExporter 668 registerBeanInstance - Located MBean 'statFilter': registering with JMX server as MBean [com.alibaba.druid.filter.stat:name=statFilter,type=StatFilter]
+17:05:07.009 INFO  org.springframework.context.support.DefaultLifecycleProcessor$LifecycleGroup 356 start - Starting beans in phase 2147483647
+17:05:07.010 INFO  org.springframework.scheduling.quartz.SchedulerFactoryBean 706 startScheduler - Starting Quartz Scheduler now
+17:05:07.010 INFO  org.quartz.core.QuartzScheduler 547 start - Scheduler quartzScheduler_$_NON_CLUSTERED started.
+17:05:07.010 DEBUG org.quartz.core.QuartzSchedulerThread 291 run - batch acquisition of 0 triggers
+17:05:07.016 INFO  org.apache.juli.logging.DirectJDKLog 180 log - Starting ProtocolHandler ["http-nio-9090"]
+17:05:07.024 INFO  org.apache.juli.logging.DirectJDKLog 180 log - Using a shared selector for servlet write/read
+17:05:07.035 INFO  org.springframework.boot.web.embedded.tomcat.TomcatWebServer 206 start - Tomcat started on port(s): 9090 (http) with context path ''
+17:05:07.037 INFO  org.springframework.boot.StartupInfoLogger 59 logStarted - Started BatchApplication in 2.787 seconds (JVM running for 3.678)
+17:05:32.281 DEBUG org.quartz.core.QuartzSchedulerThread 291 run - batch acquisition of 0 triggers
+17:05:32.733 DEBUG org.quartz.core.QuartzSchedulerThread 291 run - batch acquisition of 0 triggers
+17:05:35.387 INFO  org.springframework.boot.admin.SpringApplicationAdminMXBeanRegistrar$SpringApplicationAdmin 132 shutdown - Application shutdown requested.
+17:05:35.388 INFO  org.springframework.context.support.AbstractApplicationContext 991 doClose - Closing org.springframework.boot.web.servlet.context.AnnotationConfigServletWebServerApplicationContext@702b8b12: startup date [Thu Nov 21 17:05:04 CST 2019]; root of context hierarchy
+17:05:35.389 INFO  org.springframework.context.support.DefaultLifecycleProcessor$LifecycleGroup 369 stop - Stopping beans in phase 2147483647
+17:05:35.390 INFO  org.quartz.core.QuartzScheduler 585 standby - Scheduler quartzScheduler_$_NON_CLUSTERED paused.
+17:05:35.390 INFO  org.springframework.scheduling.quartz.SchedulerFactoryBean 830 destroy - Shutting down Quartz Scheduler
+17:05:35.390 INFO  org.quartz.core.QuartzScheduler 666 shutdown - Scheduler quartzScheduler_$_NON_CLUSTERED shutting down.
+17:05:35.390 INFO  org.quartz.core.QuartzScheduler 585 standby - Scheduler quartzScheduler_$_NON_CLUSTERED paused.
+17:05:35.391 DEBUG org.quartz.simpl.SimpleThreadPool 328 shutdown - Shutting down threadpool...
+17:05:35.391 DEBUG org.quartz.simpl.SimpleThreadPool 395 shutdown - Shutdown of threadpool complete.
+17:05:35.391 INFO  org.quartz.core.QuartzScheduler 740 shutdown - Scheduler quartzScheduler_$_NON_CLUSTERED shutdown complete.
+17:05:35.391 INFO  org.springframework.jmx.export.MBeanExporter 451 destroy - Unregistering JMX-exposed beans on shutdown
+17:05:35.392 INFO  org.springframework.jmx.support.MBeanRegistrationSupport 185 unregisterBeans - Unregistering JMX-exposed beans
+17:05:35.393 INFO  com.glodon.quartz.config.JobInit 85 lambda$1 - 获取定时任务配置信息退出前销毁 QuartzBean(batchJobName=corpJob, jobName=job1, jobGroup=job-group1, jobClass=com.glodon.quartz.job.impl.JobExecuteBatch, triggerName=trigger1, triggerGroup=trigger-group1, cronExpression=0 58 * * * ? *) 
+17:05:35.394 DEBUG org.quartz.core.QuartzSchedulerThread 291 run - batch acquisition of 0 triggers
+17:05:35.394 INFO  org.quartz.core.QuartzScheduler 666 shutdown - Scheduler BATCH_$_NON_CLUSTERED shutting down.
+17:05:35.394 DEBUG org.quartz.core.QuartzSchedulerThread 291 run - batch acquisition of 0 triggers
+17:05:35.394 INFO  org.quartz.core.QuartzScheduler 585 standby - Scheduler BATCH_$_NON_CLUSTERED paused.
+17:05:35.394 DEBUG org.quartz.simpl.SimpleThreadPool 328 shutdown - Shutting down threadpool...
+17:05:35.394 DEBUG org.quartz.simpl.SimpleThreadPool 395 shutdown - Shutdown of threadpool complete.
+17:05:35.394 INFO  org.quartz.core.QuartzScheduler 740 shutdown - Scheduler BATCH_$_NON_CLUSTERED shutdown complete.
+17:05:35.397 INFO  com.alibaba.druid.pool.DruidDataSource 1825 close - {dataSource-1} closed
+17:05:35.439 DEBUG org.quartz.simpl.SimpleThreadPool$WorkerThread 612 run - WorkerThread is shut down.
+17:05:35.440 DEBUG org.quartz.simpl.SimpleThreadPool$WorkerThread 612 run - WorkerThread is shut down.
+17:05:35.440 DEBUG org.quartz.simpl.SimpleThreadPool$WorkerThread 612 run - WorkerThread is shut down.
+17:05:35.440 DEBUG org.quartz.simpl.SimpleThreadPool$WorkerThread 612 run - WorkerThread is shut down.
+17:05:35.440 DEBUG org.quartz.simpl.SimpleThreadPool$WorkerThread 612 run - WorkerThread is shut down.
+17:05:35.440 DEBUG org.quartz.simpl.SimpleThreadPool$WorkerThread 612 run - WorkerThread is shut down.
+17:05:35.440 DEBUG org.quartz.simpl.SimpleThreadPool$WorkerThread 612 run - WorkerThread is shut down.
+17:05:35.441 DEBUG org.quartz.simpl.SimpleThreadPool$WorkerThread 612 run - WorkerThread is shut down.
+17:05:35.441 DEBUG org.quartz.simpl.SimpleThreadPool$WorkerThread 612 run - WorkerThread is shut down.
+17:05:35.441 DEBUG org.quartz.simpl.SimpleThreadPool$WorkerThread 612 run - WorkerThread is shut down.
+17:05:35.669 DEBUG org.quartz.simpl.SimpleThreadPool$WorkerThread 612 run - WorkerThread is shut down.
+17:05:35.669 DEBUG org.quartz.simpl.SimpleThreadPool$WorkerThread 612 run - WorkerThread is shut down.
+17:05:35.669 DEBUG org.quartz.simpl.SimpleThreadPool$WorkerThread 612 run - WorkerThread is shut down.
+17:05:35.669 DEBUG org.quartz.simpl.SimpleThreadPool$WorkerThread 612 run - WorkerThread is shut down.
+17:05:35.669 DEBUG org.quartz.simpl.SimpleThreadPool$WorkerThread 612 run - WorkerThread is shut down.
+17:05:35.669 DEBUG org.quartz.simpl.SimpleThreadPool$WorkerThread 612 run - WorkerThread is shut down.
+17:05:35.670 DEBUG org.quartz.simpl.SimpleThreadPool$WorkerThread 612 run - WorkerThread is shut down.
+17:05:35.670 DEBUG org.quartz.simpl.SimpleThreadPool$WorkerThread 612 run - WorkerThread is shut down.
+17:05:35.670 DEBUG org.quartz.simpl.SimpleThreadPool$WorkerThread 612 run - WorkerThread is shut down.
+17:05:35.670 DEBUG org.quartz.simpl.SimpleThreadPool$WorkerThread 612 run - WorkerThread is shut down.
+17:05:35.670 DEBUG org.quartz.simpl.SimpleThreadPool$WorkerThread 612 run - WorkerThread is shut down.
+17:05:35.670 DEBUG org.quartz.simpl.SimpleThreadPool$WorkerThread 612 run - WorkerThread is shut down.
+17:05:35.670 DEBUG org.quartz.simpl.SimpleThreadPool$WorkerThread 612 run - WorkerThread is shut down.
+17:05:35.670 DEBUG org.quartz.simpl.SimpleThreadPool$WorkerThread 612 run - WorkerThread is shut down.
+17:05:35.670 DEBUG org.quartz.simpl.SimpleThreadPool$WorkerThread 612 run - WorkerThread is shut down.
+17:05:35.670 DEBUG org.quartz.simpl.SimpleThreadPool$WorkerThread 612 run - WorkerThread is shut down.
+17:05:35.670 DEBUG org.quartz.simpl.SimpleThreadPool$WorkerThread 612 run - WorkerThread is shut down.
+17:05:35.670 DEBUG org.quartz.simpl.SimpleThreadPool$WorkerThread 612 run - WorkerThread is shut down.
+17:05:35.670 DEBUG org.quartz.simpl.SimpleThreadPool$WorkerThread 612 run - WorkerThread is shut down.
+17:05:35.670 DEBUG org.quartz.simpl.SimpleThreadPool$WorkerThread 612 run - WorkerThread is shut down.
+17:05:35.670 DEBUG org.quartz.simpl.SimpleThreadPool$WorkerThread 612 run - WorkerThread is shut down.
+17:05:35.670 DEBUG org.quartz.simpl.SimpleThreadPool$WorkerThread 612 run - WorkerThread is shut down.
+17:05:35.670 DEBUG org.quartz.simpl.SimpleThreadPool$WorkerThread 612 run - WorkerThread is shut down.
+17:05:35.670 DEBUG org.quartz.simpl.SimpleThreadPool$WorkerThread 612 run - WorkerThread is shut down.
+17:05:35.671 DEBUG org.quartz.simpl.SimpleThreadPool$WorkerThread 612 run - WorkerThread is shut down.

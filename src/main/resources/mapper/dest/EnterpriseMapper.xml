@@ -26,22 +26,19 @@
   </resultMap>
   
   <select id="selectEnterpriseById" resultMap="BaseResultMap">
-    select id  from sky_enterprise  
+    select id  from sky_enterprise  where id = #{id}
    
   </select>
   <update id="update" parameterType="com.glodon.entity.Enterprise" >
-  	update sky_enterprise set 
+  	UPDATE  sky_enterprise SET  
   		enterprise_name = #{enterpriseName,jdbcType=VARCHAR},
   		credit_code = #{creditCode,jdbcType=VARCHAR},
         legal_name = #{legalName,jdbcType=VARCHAR}, 
         legal_identity_num = #{legalIdentityNum,jdbcType=VARCHAR},
         province_code = #{provinceCode,jdbcType=VARCHAR},
         city_code = #{cityCode,jdbcType=VARCHAR}, 
-        area_code = #{areaCode,jdbcType=VARCHAR},
-        update_time = #{updateTime,jdbcType=TIMESTAMP}, 
-        update_by = #{updateBy,jdbcType=VARCHAR}, 
-        data_source = #{dataSource,jdbcType=INTEGER}
- 	where id=#{id} 
+        area_code = #{areaCode,jdbcType=VARCHAR}
+ 	WHERE id = #{id,jdbcType=VARCHAR}
   </update>
   <insert id="insert" parameterType="com.glodon.entity.Enterprise" >
     insert into sky_enterprise (id, enterprise_name, credit_code, 
@@ -52,7 +49,9 @@
       create_time, create_by, update_time, 
       update_by, is_del, data_source
       )
-    values (#{id,jdbcType=VARCHAR}, #{enterpriseName,jdbcType=VARCHAR}, #{creditCode,jdbcType=VARCHAR}, 
+    values (#{id,jdbcType=VARCHAR}, 
+      #{enterpriseName,jdbcType=VARCHAR}, 
+      #{creditCode,jdbcType=VARCHAR}, 
       #{legalName,jdbcType=VARCHAR}, #{legalIdentityNum,jdbcType=VARCHAR}, #{operator,jdbcType=VARCHAR}, 
       #{operatorTel,jdbcType=VARCHAR}, #{provinceCode,jdbcType=VARCHAR}, #{cityCode,jdbcType=VARCHAR}, 
       #{areaCode,jdbcType=VARCHAR}, #{provinceName,jdbcType=VARCHAR}, #{cityName,jdbcType=VARCHAR}, 

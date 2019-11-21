@@ -226,6 +226,11 @@ public class Enterprise {
 		this.areaCode = areaCode;
 	
 	}
+
+	public Enterprise() {
+		super();
+		// TODO Auto-generated constructor stub
+	}
     
     
     

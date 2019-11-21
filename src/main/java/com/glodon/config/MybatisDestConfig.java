@@ -2,6 +2,7 @@ package com.glodon.config;
 
 import javax.sql.DataSource;
 
+import org.apache.ibatis.session.ExecutorType;
 import org.apache.ibatis.session.SqlSessionFactory;
 import org.mybatis.spring.SqlSessionFactoryBean;
 import org.mybatis.spring.SqlSessionTemplate;
@@ -38,6 +39,7 @@ public class MybatisDestConfig {
         SqlSessionFactoryBean sqlSessionFactoryBean = new SqlSessionFactoryBean();
         sqlSessionFactoryBean.setMapperLocations(new PathMatchingResourcePatternResolver().getResources("classpath*:mapper/dest/*.xml"));
         sqlSessionFactoryBean.setDataSource(dataSource);
+        
         return sqlSessionFactoryBean.getObject();
     }
 	
@@ -48,7 +50,7 @@ public class MybatisDestConfig {
 	
     @Bean
     public SqlSessionTemplate destSqlSessionTemplate(@Qualifier("destSqlSessionFactory") SqlSessionFactory sqlSessionFactory) throws Exception {
-        SqlSessionTemplate sqlSessionTemplate = new SqlSessionTemplate(sqlSessionFactory);
+        SqlSessionTemplate sqlSessionTemplate = new SqlSessionTemplate(sqlSessionFactory, ExecutorType.BATCH);
         return sqlSessionTemplate;
     }
 }
