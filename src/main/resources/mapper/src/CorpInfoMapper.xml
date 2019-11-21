@@ -1,0 +1,296 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.glodon.mapper.src.CorpInfoMapper" >
+  <resultMap id="BaseResultMap" type="com.glodon.entity.CorpInfo" >
+    <result column="CorpGUID" property="corpguid" jdbcType="VARCHAR" />
+    <result column="CORPCODE" property="corpcode" jdbcType="VARCHAR" />
+    <result column="CORPNAME" property="corpname" jdbcType="VARCHAR" />
+    <result column="LICENSENUM" property="licensenum" jdbcType="VARCHAR" />
+    <result column="PROVINCENUM" property="provincenum" jdbcType="INTEGER" />
+    <result column="CITYNUM" property="citynum" jdbcType="INTEGER" />
+    <result column="COUNTYNUM" property="countynum" jdbcType="INTEGER" />
+    <result column="ADDRESS" property="address" jdbcType="VARCHAR" />
+    <result column="POSTALCODE" property="postalcode" jdbcType="VARCHAR" />
+    <result column="ECONOMICNUM" property="economicnum" jdbcType="INTEGER" />
+    <result column="REGPRIN" property="regprin" jdbcType="DECIMAL" />
+    <result column="FACTREGPRIN" property="factregprin" jdbcType="DECIMAL" />
+    <result column="PRINCIPALUNITNUM" property="principalunitnum" jdbcType="INTEGER" />
+    <result column="LegalMan" property="legalman" jdbcType="VARCHAR" />
+    <result column="LEGALMANIDCARD" property="legalmanidcard" jdbcType="VARCHAR" />
+    <result column="LegalManDuty" property="legalmanduty" jdbcType="VARCHAR" />
+    <result column="LegalManProTitle" property="legalmanprotitle" jdbcType="VARCHAR" />
+    <result column="UnitMan" property="unitman" jdbcType="VARCHAR" />
+    <result column="UnitManIdCard" property="unitmanidcard" jdbcType="VARCHAR" />
+    <result column="UnitManDuty" property="unitmanduty" jdbcType="VARCHAR" />
+    <result column="UnitManProTitle" property="unitmanprotitle" jdbcType="VARCHAR" />
+    <result column="TechMan" property="techman" jdbcType="VARCHAR" />
+    <result column="TechManIdCard" property="techmanidcard" jdbcType="VARCHAR" />
+    <result column="TechManDuty" property="techmanduty" jdbcType="VARCHAR" />
+    <result column="TechManProTitle" property="techmanprotitle" jdbcType="VARCHAR" />
+    <result column="CORPBIRTHDATE" property="corpbirthdate" jdbcType="DATE" />
+    <result column="OFFICEPHONE" property="officephone" jdbcType="VARCHAR" />
+    <result column="FAX" property="fax" jdbcType="VARCHAR" />
+    <result column="LINKMAN" property="linkman" jdbcType="VARCHAR" />
+    <result column="LINKTEL" property="linktel" jdbcType="VARCHAR" />
+    <result column="LINKPHONE" property="linkphone" jdbcType="VARCHAR" />
+    <result column="EMAIL" property="email" jdbcType="VARCHAR" />
+    <result column="URL" property="url" jdbcType="VARCHAR" />
+    <result column="DESCRIPTION" property="description" jdbcType="VARCHAR" />
+  </resultMap>
+  <resultMap id="BaseResultMap2" type="com.glodon.entity.CorpInfo" >
+    <result column="CorpGUID" property="corpguid" jdbcType="VARCHAR" />
+    <result column="CORPNAME" property="corpname" jdbcType="VARCHAR" />
+    <result column="LICENSENUM" property="licensenum" jdbcType="VARCHAR" />
+    <result column="PROVINCENUM" property="provincenum" jdbcType="INTEGER" />
+    <result column="CITYNUM" property="citynum" jdbcType="INTEGER" />
+    <result column="COUNTYNUM" property="countynum" jdbcType="INTEGER" />
+    <result column="LegalMan" property="legalman" jdbcType="VARCHAR" />
+    <result column="LEGALMANIDCARD" property="legalmanidcard" jdbcType="VARCHAR" />
+
+  </resultMap>
+  <!-- CorpGUID id,CORPNAME enterprise_name,LICENSENUM credit_code,LegalMan legal_name,LEGALMANIDCARD legal_identity_num,
+				PROVINCENUM province_code,CITYNUM city_code,COUNTYNUM area_code -->
+  <select id="selectAllCorpInfo" resultMap="BaseResultMap2">
+    select CorpGUID,CORPNAME,LICENSENUM,PROVINCENUM,CITYNUM,COUNTYNUM,LegalMan,LEGALMANIDCARD
+    
+    from tbcorpbasicinfo
+   
+  </select>
+  <insert id="insert" parameterType="com.glodon.entity.CorpInfo" >
+    insert into tbcorpbasicinfo (CorpGUID, CORPCODE, CORPNAME, 
+      LICENSENUM, PROVINCENUM, CITYNUM, 
+      COUNTYNUM, ADDRESS, POSTALCODE, 
+      ECONOMICNUM, REGPRIN, FACTREGPRIN, 
+      PRINCIPALUNITNUM, LegalMan, LEGALMANIDCARD, 
+      LegalManDuty, LegalManProTitle, UnitMan, 
+      UnitManIdCard, UnitManDuty, UnitManProTitle, 
+      TechMan, TechManIdCard, TechManDuty, 
+      TechManProTitle, CORPBIRTHDATE, OFFICEPHONE, 
+      FAX, LINKMAN, LINKTEL, 
+      LINKPHONE, EMAIL, URL, 
+      DESCRIPTION)
+    values (#{corpguid,jdbcType=VARCHAR}, #{corpcode,jdbcType=VARCHAR}, #{corpname,jdbcType=VARCHAR}, 
+      #{licensenum,jdbcType=VARCHAR}, #{provincenum,jdbcType=INTEGER}, #{citynum,jdbcType=INTEGER}, 
+      #{countynum,jdbcType=INTEGER}, #{address,jdbcType=VARCHAR}, #{postalcode,jdbcType=VARCHAR}, 
+      #{economicnum,jdbcType=INTEGER}, #{regprin,jdbcType=DECIMAL}, #{factregprin,jdbcType=DECIMAL}, 
+      #{principalunitnum,jdbcType=INTEGER}, #{legalman,jdbcType=VARCHAR}, #{legalmanidcard,jdbcType=VARCHAR}, 
+      #{legalmanduty,jdbcType=VARCHAR}, #{legalmanprotitle,jdbcType=VARCHAR}, #{unitman,jdbcType=VARCHAR}, 
+      #{unitmanidcard,jdbcType=VARCHAR}, #{unitmanduty,jdbcType=VARCHAR}, #{unitmanprotitle,jdbcType=VARCHAR}, 
+      #{techman,jdbcType=VARCHAR}, #{techmanidcard,jdbcType=VARCHAR}, #{techmanduty,jdbcType=VARCHAR}, 
+      #{techmanprotitle,jdbcType=VARCHAR}, #{corpbirthdate,jdbcType=DATE}, #{officephone,jdbcType=VARCHAR}, 
+      #{fax,jdbcType=VARCHAR}, #{linkman,jdbcType=VARCHAR}, #{linktel,jdbcType=VARCHAR}, 
+      #{linkphone,jdbcType=VARCHAR}, #{email,jdbcType=VARCHAR}, #{url,jdbcType=VARCHAR}, 
+      #{description,jdbcType=VARCHAR})
+  </insert>
+  <insert id="insertSelective" parameterType="com.glodon.entity.CorpInfo" >
+    insert into tbcorpbasicinfo
+    <trim prefix="(" suffix=")" suffixOverrides="," >
+      <if test="corpguid != null" >
+        CorpGUID,
+      </if>
+      <if test="corpcode != null" >
+        CORPCODE,
+      </if>
+      <if test="corpname != null" >
+        CORPNAME,
+      </if>
+      <if test="licensenum != null" >
+        LICENSENUM,
+      </if>
+      <if test="provincenum != null" >
+        PROVINCENUM,
+      </if>
+      <if test="citynum != null" >
+        CITYNUM,
+      </if>
+      <if test="countynum != null" >
+        COUNTYNUM,
+      </if>
+      <if test="address != null" >
+        ADDRESS,
+      </if>
+      <if test="postalcode != null" >
+        POSTALCODE,
+      </if>
+      <if test="economicnum != null" >
+        ECONOMICNUM,
+      </if>
+      <if test="regprin != null" >
+        REGPRIN,
+      </if>
+      <if test="factregprin != null" >
+        FACTREGPRIN,
+      </if>
+      <if test="principalunitnum != null" >
+        PRINCIPALUNITNUM,
+      </if>
+      <if test="legalman != null" >
+        LegalMan,
+      </if>
+      <if test="legalmanidcard != null" >
+        LEGALMANIDCARD,
+      </if>
+      <if test="legalmanduty != null" >
+        LegalManDuty,
+      </if>
+      <if test="legalmanprotitle != null" >
+        LegalManProTitle,
+      </if>
+      <if test="unitman != null" >
+        UnitMan,
+      </if>
+      <if test="unitmanidcard != null" >
+        UnitManIdCard,
+      </if>
+      <if test="unitmanduty != null" >
+        UnitManDuty,
+      </if>
+      <if test="unitmanprotitle != null" >
+        UnitManProTitle,
+      </if>
+      <if test="techman != null" >
+        TechMan,
+      </if>
+      <if test="techmanidcard != null" >
+        TechManIdCard,
+      </if>
+      <if test="techmanduty != null" >
+        TechManDuty,
+      </if>
+      <if test="techmanprotitle != null" >
+        TechManProTitle,
+      </if>
+      <if test="corpbirthdate != null" >
+        CORPBIRTHDATE,
+      </if>
+      <if test="officephone != null" >
+        OFFICEPHONE,
+      </if>
+      <if test="fax != null" >
+        FAX,
+      </if>
+      <if test="linkman != null" >
+        LINKMAN,
+      </if>
+      <if test="linktel != null" >
+        LINKTEL,
+      </if>
+      <if test="linkphone != null" >
+        LINKPHONE,
+      </if>
+      <if test="email != null" >
+        EMAIL,
+      </if>
+      <if test="url != null" >
+        URL,
+      </if>
+      <if test="description != null" >
+        DESCRIPTION,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides="," >
+      <if test="corpguid != null" >
+        #{corpguid,jdbcType=VARCHAR},
+      </if>
+      <if test="corpcode != null" >
+        #{corpcode,jdbcType=VARCHAR},
+      </if>
+      <if test="corpname != null" >
+        #{corpname,jdbcType=VARCHAR},
+      </if>
+      <if test="licensenum != null" >
+        #{licensenum,jdbcType=VARCHAR},
+      </if>
+      <if test="provincenum != null" >
+        #{provincenum,jdbcType=INTEGER},
+      </if>
+      <if test="citynum != null" >
+        #{citynum,jdbcType=INTEGER},
+      </if>
+      <if test="countynum != null" >
+        #{countynum,jdbcType=INTEGER},
+      </if>
+      <if test="address != null" >
+        #{address,jdbcType=VARCHAR},
+      </if>
+      <if test="postalcode != null" >
+        #{postalcode,jdbcType=VARCHAR},
+      </if>
+      <if test="economicnum != null" >
+        #{economicnum,jdbcType=INTEGER},
+      </if>
+      <if test="regprin != null" >
+        #{regprin,jdbcType=DECIMAL},
+      </if>
+      <if test="factregprin != null" >
+        #{factregprin,jdbcType=DECIMAL},
+      </if>
+      <if test="principalunitnum != null" >
+        #{principalunitnum,jdbcType=INTEGER},
+      </if>
+      <if test="legalman != null" >
+        #{legalman,jdbcType=VARCHAR},
+      </if>
+      <if test="legalmanidcard != null" >
+        #{legalmanidcard,jdbcType=VARCHAR},
+      </if>
+      <if test="legalmanduty != null" >
+        #{legalmanduty,jdbcType=VARCHAR},
+      </if>
+      <if test="legalmanprotitle != null" >
+        #{legalmanprotitle,jdbcType=VARCHAR},
+      </if>
+      <if test="unitman != null" >
+        #{unitman,jdbcType=VARCHAR},
+      </if>
+      <if test="unitmanidcard != null" >
+        #{unitmanidcard,jdbcType=VARCHAR},
+      </if>
+      <if test="unitmanduty != null" >
+        #{unitmanduty,jdbcType=VARCHAR},
+      </if>
+      <if test="unitmanprotitle != null" >
+        #{unitmanprotitle,jdbcType=VARCHAR},
+      </if>
+      <if test="techman != null" >
+        #{techman,jdbcType=VARCHAR},
+      </if>
+      <if test="techmanidcard != null" >
+        #{techmanidcard,jdbcType=VARCHAR},
+      </if>
+      <if test="techmanduty != null" >
+        #{techmanduty,jdbcType=VARCHAR},
+      </if>
+      <if test="techmanprotitle != null" >
+        #{techmanprotitle,jdbcType=VARCHAR},
+      </if>
+      <if test="corpbirthdate != null" >
+        #{corpbirthdate,jdbcType=DATE},
+      </if>
+      <if test="officephone != null" >
+        #{officephone,jdbcType=VARCHAR},
+      </if>
+      <if test="fax != null" >
+        #{fax,jdbcType=VARCHAR},
+      </if>
+      <if test="linkman != null" >
+        #{linkman,jdbcType=VARCHAR},
+      </if>
+      <if test="linktel != null" >
+        #{linktel,jdbcType=VARCHAR},
+      </if>
+      <if test="linkphone != null" >
+        #{linkphone,jdbcType=VARCHAR},
+      </if>
+      <if test="email != null" >
+        #{email,jdbcType=VARCHAR},
+      </if>
+      <if test="url != null" >
+        #{url,jdbcType=VARCHAR},
+      </if>
+      <if test="description != null" >
+        #{description,jdbcType=VARCHAR},
+      </if>
+    </trim>
+  </insert>
+</mapper>

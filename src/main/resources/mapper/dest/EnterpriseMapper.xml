@@ -1,0 +1,197 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.glodon.mapper.dest.EnterpriseMapper" >
+  <resultMap id="BaseResultMap" type="com.glodon.entity.Enterprise" >
+    <result column="id" property="id" jdbcType="VARCHAR" />
+    <result column="enterprise_name" property="enterpriseName" jdbcType="VARCHAR" />
+    <result column="credit_code" property="creditCode" jdbcType="VARCHAR" />
+    <result column="legal_name" property="legalName" jdbcType="VARCHAR" />
+    <result column="legal_identity_num" property="legalIdentityNum" jdbcType="VARCHAR" />
+    <result column="operator" property="operator" jdbcType="VARCHAR" />
+    <result column="operator_tel" property="operatorTel" jdbcType="VARCHAR" />
+    <result column="province_code" property="provinceCode" jdbcType="VARCHAR" />
+    <result column="city_code" property="cityCode" jdbcType="VARCHAR" />
+    <result column="area_code" property="areaCode" jdbcType="VARCHAR" />
+    <result column="province_name" property="provinceName" jdbcType="VARCHAR" />
+    <result column="city_name" property="cityName" jdbcType="VARCHAR" />
+    <result column="area_name" property="areaName" jdbcType="VARCHAR" />
+    <result column="certificate" property="certificate" jdbcType="VARCHAR" />
+    <result column="reg_flag" property="regFlag" jdbcType="CHAR" />
+    <result column="create_time" property="createTime" jdbcType="TIMESTAMP" />
+    <result column="create_by" property="createBy" jdbcType="VARCHAR" />
+    <result column="update_time" property="updateTime" jdbcType="TIMESTAMP" />
+    <result column="update_by" property="updateBy" jdbcType="VARCHAR" />
+    <result column="is_del" property="isDel" jdbcType="INTEGER" />
+    <result column="data_source" property="dataSource" jdbcType="INTEGER" />
+  </resultMap>
+  
+  <select id="selectEnterpriseById" resultMap="BaseResultMap">
+    select id  from sky_enterprise  
+   
+  </select>
+  <update id="update" parameterType="com.glodon.entity.Enterprise" >
+  	update sky_enterprise set 
+  		enterprise_name = #{enterpriseName,jdbcType=VARCHAR},
+  		credit_code = #{creditCode,jdbcType=VARCHAR},
+        legal_name = #{legalName,jdbcType=VARCHAR}, 
+        legal_identity_num = #{legalIdentityNum,jdbcType=VARCHAR},
+        province_code = #{provinceCode,jdbcType=VARCHAR},
+        city_code = #{cityCode,jdbcType=VARCHAR}, 
+        area_code = #{areaCode,jdbcType=VARCHAR},
+        update_time = #{updateTime,jdbcType=TIMESTAMP}, 
+        update_by = #{updateBy,jdbcType=VARCHAR}, 
+        data_source = #{dataSource,jdbcType=INTEGER}
+ 	where id=#{id} 
+  </update>
+  <insert id="insert" parameterType="com.glodon.entity.Enterprise" >
+    insert into sky_enterprise (id, enterprise_name, credit_code, 
+      legal_name, legal_identity_num, operator, 
+      operator_tel, province_code, city_code, 
+      area_code, province_name, city_name, 
+      area_name, certificate, reg_flag, 
+      create_time, create_by, update_time, 
+      update_by, is_del, data_source
+      )
+    values (#{id,jdbcType=VARCHAR}, #{enterpriseName,jdbcType=VARCHAR}, #{creditCode,jdbcType=VARCHAR}, 
+      #{legalName,jdbcType=VARCHAR}, #{legalIdentityNum,jdbcType=VARCHAR}, #{operator,jdbcType=VARCHAR}, 
+      #{operatorTel,jdbcType=VARCHAR}, #{provinceCode,jdbcType=VARCHAR}, #{cityCode,jdbcType=VARCHAR}, 
+      #{areaCode,jdbcType=VARCHAR}, #{provinceName,jdbcType=VARCHAR}, #{cityName,jdbcType=VARCHAR}, 
+      #{areaName,jdbcType=VARCHAR}, #{certificate,jdbcType=VARCHAR}, #{regFlag,jdbcType=CHAR}, 
+      #{createTime,jdbcType=TIMESTAMP}, #{createBy,jdbcType=VARCHAR}, #{updateTime,jdbcType=TIMESTAMP}, 
+      #{updateBy,jdbcType=VARCHAR}, #{isDel,jdbcType=INTEGER}, #{dataSource,jdbcType=INTEGER}
+      )
+  </insert>
+  <insert id="insertSelective" parameterType="com.glodon.entity.Enterprise" >
+    insert into sky_enterprise
+    <trim prefix="(" suffix=")" suffixOverrides="," >
+      <if test="id != null" >
+        id,
+      </if>
+      <if test="enterpriseName != null" >
+        enterprise_name,
+      </if>
+      <if test="creditCode != null" >
+        credit_code,
+      </if>
+      <if test="legalName != null" >
+        legal_name,
+      </if>
+      <if test="legalIdentityNum != null" >
+        legal_identity_num,
+      </if>
+      <if test="operator != null" >
+        operator,
+      </if>
+      <if test="operatorTel != null" >
+        operator_tel,
+      </if>
+      <if test="provinceCode != null" >
+        province_code,
+      </if>
+      <if test="cityCode != null" >
+        city_code,
+      </if>
+      <if test="areaCode != null" >
+        area_code,
+      </if>
+      <if test="provinceName != null" >
+        province_name,
+      </if>
+      <if test="cityName != null" >
+        city_name,
+      </if>
+      <if test="areaName != null" >
+        area_name,
+      </if>
+      <if test="certificate != null" >
+        certificate,
+      </if>
+      <if test="regFlag != null" >
+        reg_flag,
+      </if>
+      <if test="createTime != null" >
+        create_time,
+      </if>
+      <if test="createBy != null" >
+        create_by,
+      </if>
+      <if test="updateTime != null" >
+        update_time,
+      </if>
+      <if test="updateBy != null" >
+        update_by,
+      </if>
+      <if test="isDel != null" >
+        is_del,
+      </if>
+      <if test="dataSource != null" >
+        data_source,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides="," >
+      <if test="id != null" >
+        #{id,jdbcType=VARCHAR},
+      </if>
+      <if test="enterpriseName != null" >
+        #{enterpriseName,jdbcType=VARCHAR},
+      </if>
+      <if test="creditCode != null" >
+        #{creditCode,jdbcType=VARCHAR},
+      </if>
+      <if test="legalName != null" >
+        #{legalName,jdbcType=VARCHAR},
+      </if>
+      <if test="legalIdentityNum != null" >
+        #{legalIdentityNum,jdbcType=VARCHAR},
+      </if>
+      <if test="operator != null" >
+        #{operator,jdbcType=VARCHAR},
+      </if>
+      <if test="operatorTel != null" >
+        #{operatorTel,jdbcType=VARCHAR},
+      </if>
+      <if test="provinceCode != null" >
+        #{provinceCode,jdbcType=VARCHAR},
+      </if>
+      <if test="cityCode != null" >
+        #{cityCode,jdbcType=VARCHAR},
+      </if>
+      <if test="areaCode != null" >
+        #{areaCode,jdbcType=VARCHAR},
+      </if>
+      <if test="provinceName != null" >
+        #{provinceName,jdbcType=VARCHAR},
+      </if>
+      <if test="cityName != null" >
+        #{cityName,jdbcType=VARCHAR},
+      </if>
+      <if test="areaName != null" >
+        #{areaName,jdbcType=VARCHAR},
+      </if>
+      <if test="certificate != null" >
+        #{certificate,jdbcType=VARCHAR},
+      </if>
+      <if test="regFlag != null" >
+        #{regFlag,jdbcType=CHAR},
+      </if>
+      <if test="createTime != null" >
+        #{createTime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="createBy != null" >
+        #{createBy,jdbcType=VARCHAR},
+      </if>
+      <if test="updateTime != null" >
+        #{updateTime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="updateBy != null" >
+        #{updateBy,jdbcType=VARCHAR},
+      </if>
+      <if test="isDel != null" >
+        #{isDel,jdbcType=INTEGER},
+      </if>
+      <if test="dataSource != null" >
+        #{dataSource,jdbcType=INTEGER},
+      </if>
+    </trim>
+  </insert>
+</mapper>

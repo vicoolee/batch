@@ -1,4 +1,4 @@
-package com.glodon.entity;
+package com.glodon.quartz.entity;
 
 import lombok.Data;
 

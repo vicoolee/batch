@@ -1,4 +1,4 @@
-package com.glodon.config;
+package com.glodon.quartz.config;
 
 import java.io.IOException;
 import java.util.Properties;

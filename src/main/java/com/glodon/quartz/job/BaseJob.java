@@ -1,4 +1,4 @@
-package com.glodon.job;
+package com.glodon.quartz.job;
 
 import org.quartz.Job;
 import org.quartz.JobExecutionContext;

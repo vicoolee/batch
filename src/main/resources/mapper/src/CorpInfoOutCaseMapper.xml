@@ -1,0 +1,224 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.glodon.mapper.CorpInfoOutCaseMapper" >
+  <resultMap id="BaseResultMap" type="com.glodon.entity.CorpInfoOutCase" >
+    <result column="ID" property="id" jdbcType="INTEGER" />
+    <result column="RecordGuid" property="recordguid" jdbcType="VARCHAR" />
+    <result column="CorpCode" property="corpcode" jdbcType="VARCHAR" />
+    <result column="CorpName" property="corpname" jdbcType="VARCHAR" />
+    <result column="LicenseNum" property="licensenum" jdbcType="VARCHAR" />
+    <result column="ProvinceNum" property="provincenum" jdbcType="INTEGER" />
+    <result column="CityNum" property="citynum" jdbcType="INTEGER" />
+    <result column="CountyNum" property="countynum" jdbcType="INTEGER" />
+    <result column="ADDRESS" property="address" jdbcType="VARCHAR" />
+    <result column="CertID" property="certid" jdbcType="VARCHAR" />
+    <result column="CertEffectDate" property="certeffectdate" jdbcType="VARCHAR" />
+    <result column="CertID_AQ" property="certidAq" jdbcType="VARCHAR" />
+    <result column="CertEffectDate_AQ" property="certeffectdateAq" jdbcType="VARCHAR" />
+    <result column="ZJCityNum" property="zjcitynum" jdbcType="CHAR" />
+    <result column="ZJCountyNum" property="zjcountynum" jdbcType="CHAR" />
+    <result column="ZJBusAddress" property="zjbusaddress" jdbcType="VARCHAR" />
+    <result column="ZJOfficePhone" property="zjofficephone" jdbcType="VARCHAR" />
+    <result column="ZJFax" property="zjfax" jdbcType="VARCHAR" />
+    <result column="LegalManName" property="legalmanname" jdbcType="VARCHAR" />
+    <result column="LegalManIDCard" property="legalmanidcard" jdbcType="VARCHAR" />
+    <result column="LegalManPhone" property="legalmanphone" jdbcType="VARCHAR" />
+    <result column="ZJManName" property="zjmanname" jdbcType="VARCHAR" />
+    <result column="ZJManIDCard" property="zjmanidcard" jdbcType="VARCHAR" />
+    <result column="ZJManPhone" property="zjmanphone" jdbcType="VARCHAR" />
+    <result column="ZJTechManName" property="zjtechmanname" jdbcType="VARCHAR" />
+    <result column="ZJTechManIDCard" property="zjtechmanidcard" jdbcType="VARCHAR" />
+    <result column="ZJTechManPhone" property="zjtechmanphone" jdbcType="VARCHAR" />
+  </resultMap>
+  <insert id="insert" parameterType="com.glodon.entity.CorpInfoOutCase" >
+    insert into fb_tbcorpbasicinfo_outcase (ID, RecordGuid, CorpCode, 
+      CorpName, LicenseNum, ProvinceNum, 
+      CityNum, CountyNum, ADDRESS, 
+      CertID, CertEffectDate, CertID_AQ, 
+      CertEffectDate_AQ, ZJCityNum, ZJCountyNum, 
+      ZJBusAddress, ZJOfficePhone, ZJFax, 
+      LegalManName, LegalManIDCard, LegalManPhone, 
+      ZJManName, ZJManIDCard, ZJManPhone, 
+      ZJTechManName, ZJTechManIDCard, ZJTechManPhone
+      )
+    values (#{id,jdbcType=INTEGER}, #{recordguid,jdbcType=VARCHAR}, #{corpcode,jdbcType=VARCHAR}, 
+      #{corpname,jdbcType=VARCHAR}, #{licensenum,jdbcType=VARCHAR}, #{provincenum,jdbcType=INTEGER}, 
+      #{citynum,jdbcType=INTEGER}, #{countynum,jdbcType=INTEGER}, #{address,jdbcType=VARCHAR}, 
+      #{certid,jdbcType=VARCHAR}, #{certeffectdate,jdbcType=VARCHAR}, #{certidAq,jdbcType=VARCHAR}, 
+      #{certeffectdateAq,jdbcType=VARCHAR}, #{zjcitynum,jdbcType=CHAR}, #{zjcountynum,jdbcType=CHAR}, 
+      #{zjbusaddress,jdbcType=VARCHAR}, #{zjofficephone,jdbcType=VARCHAR}, #{zjfax,jdbcType=VARCHAR}, 
+      #{legalmanname,jdbcType=VARCHAR}, #{legalmanidcard,jdbcType=VARCHAR}, #{legalmanphone,jdbcType=VARCHAR}, 
+      #{zjmanname,jdbcType=VARCHAR}, #{zjmanidcard,jdbcType=VARCHAR}, #{zjmanphone,jdbcType=VARCHAR}, 
+      #{zjtechmanname,jdbcType=VARCHAR}, #{zjtechmanidcard,jdbcType=VARCHAR}, #{zjtechmanphone,jdbcType=VARCHAR}
+      )
+  </insert>
+  <insert id="insertSelective" parameterType="com.glodon.entity.CorpInfoOutCase" >
+    insert into fb_tbcorpbasicinfo_outcase
+    <trim prefix="(" suffix=")" suffixOverrides="," >
+      <if test="id != null" >
+        ID,
+      </if>
+      <if test="recordguid != null" >
+        RecordGuid,
+      </if>
+      <if test="corpcode != null" >
+        CorpCode,
+      </if>
+      <if test="corpname != null" >
+        CorpName,
+      </if>
+      <if test="licensenum != null" >
+        LicenseNum,
+      </if>
+      <if test="provincenum != null" >
+        ProvinceNum,
+      </if>
+      <if test="citynum != null" >
+        CityNum,
+      </if>
+      <if test="countynum != null" >
+        CountyNum,
+      </if>
+      <if test="address != null" >
+        ADDRESS,
+      </if>
+      <if test="certid != null" >
+        CertID,
+      </if>
+      <if test="certeffectdate != null" >
+        CertEffectDate,
+      </if>
+      <if test="certidAq != null" >
+        CertID_AQ,
+      </if>
+      <if test="certeffectdateAq != null" >
+        CertEffectDate_AQ,
+      </if>
+      <if test="zjcitynum != null" >
+        ZJCityNum,
+      </if>
+      <if test="zjcountynum != null" >
+        ZJCountyNum,
+      </if>
+      <if test="zjbusaddress != null" >
+        ZJBusAddress,
+      </if>
+      <if test="zjofficephone != null" >
+        ZJOfficePhone,
+      </if>
+      <if test="zjfax != null" >
+        ZJFax,
+      </if>
+      <if test="legalmanname != null" >
+        LegalManName,
+      </if>
+      <if test="legalmanidcard != null" >
+        LegalManIDCard,
+      </if>
+      <if test="legalmanphone != null" >
+        LegalManPhone,
+      </if>
+      <if test="zjmanname != null" >
+        ZJManName,
+      </if>
+      <if test="zjmanidcard != null" >
+        ZJManIDCard,
+      </if>
+      <if test="zjmanphone != null" >
+        ZJManPhone,
+      </if>
+      <if test="zjtechmanname != null" >
+        ZJTechManName,
+      </if>
+      <if test="zjtechmanidcard != null" >
+        ZJTechManIDCard,
+      </if>
+      <if test="zjtechmanphone != null" >
+        ZJTechManPhone,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides="," >
+      <if test="id != null" >
+        #{id,jdbcType=INTEGER},
+      </if>
+      <if test="recordguid != null" >
+        #{recordguid,jdbcType=VARCHAR},
+      </if>
+      <if test="corpcode != null" >
+        #{corpcode,jdbcType=VARCHAR},
+      </if>
+      <if test="corpname != null" >
+        #{corpname,jdbcType=VARCHAR},
+      </if>
+      <if test="licensenum != null" >
+        #{licensenum,jdbcType=VARCHAR},
+      </if>
+      <if test="provincenum != null" >
+        #{provincenum,jdbcType=INTEGER},
+      </if>
+      <if test="citynum != null" >
+        #{citynum,jdbcType=INTEGER},
+      </if>
+      <if test="countynum != null" >
+        #{countynum,jdbcType=INTEGER},
+      </if>
+      <if test="address != null" >
+        #{address,jdbcType=VARCHAR},
+      </if>
+      <if test="certid != null" >
+        #{certid,jdbcType=VARCHAR},
+      </if>
+      <if test="certeffectdate != null" >
+        #{certeffectdate,jdbcType=VARCHAR},
+      </if>
+      <if test="certidAq != null" >
+        #{certidAq,jdbcType=VARCHAR},
+      </if>
+      <if test="certeffectdateAq != null" >
+        #{certeffectdateAq,jdbcType=VARCHAR},
+      </if>
+      <if test="zjcitynum != null" >
+        #{zjcitynum,jdbcType=CHAR},
+      </if>
+      <if test="zjcountynum != null" >
+        #{zjcountynum,jdbcType=CHAR},
+      </if>
+      <if test="zjbusaddress != null" >
+        #{zjbusaddress,jdbcType=VARCHAR},
+      </if>
+      <if test="zjofficephone != null" >
+        #{zjofficephone,jdbcType=VARCHAR},
+      </if>
+      <if test="zjfax != null" >
+        #{zjfax,jdbcType=VARCHAR},
+      </if>
+      <if test="legalmanname != null" >
+        #{legalmanname,jdbcType=VARCHAR},
+      </if>
+      <if test="legalmanidcard != null" >
+        #{legalmanidcard,jdbcType=VARCHAR},
+      </if>
+      <if test="legalmanphone != null" >
+        #{legalmanphone,jdbcType=VARCHAR},
+      </if>
+      <if test="zjmanname != null" >
+        #{zjmanname,jdbcType=VARCHAR},
+      </if>
+      <if test="zjmanidcard != null" >
+        #{zjmanidcard,jdbcType=VARCHAR},
+      </if>
+      <if test="zjmanphone != null" >
+        #{zjmanphone,jdbcType=VARCHAR},
+      </if>
+      <if test="zjtechmanname != null" >
+        #{zjtechmanname,jdbcType=VARCHAR},
+      </if>
+      <if test="zjtechmanidcard != null" >
+        #{zjtechmanidcard,jdbcType=VARCHAR},
+      </if>
+      <if test="zjtechmanphone != null" >
+        #{zjtechmanphone,jdbcType=VARCHAR},
+      </if>
+    </trim>
+  </insert>
+</mapper>

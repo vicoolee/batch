@@ -1,4 +1,4 @@
-package com.glodon.config;
+package com.glodon.quartz.config;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -6,7 +6,7 @@ import java.util.List;
 import org.springframework.boot.context.properties.ConfigurationProperties;
 import org.springframework.stereotype.Component;
 
-import com.glodon.entity.QuartzBean;
+import com.glodon.quartz.entity.QuartzBean;
 
 import lombok.Data;
 

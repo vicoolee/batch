@@ -6,24 +6,26 @@ spring:
   batch:
     job:
       enabled: false  
+    initialize-schema: always
+      
   datasource:
     src:
       type: com.alibaba.druid.pool.DruidDataSource 
       driver-class-name: com.mysql.jdbc.Driver
-      url: jdbc:mysql://localhost:3306/test?useUnicode=true&characterEncoding=utf8&characterSetResults=utf8&useSSL=false
+      url: jdbc:mysql://localhost:3306/db1?useUnicode=true&characterEncoding=utf8&characterSetResults=utf8&useSSL=false
       username: root
       password: 123456
       
     dest:
       type: com.alibaba.druid.pool.DruidDataSource 
       driver-class-name: com.mysql.jdbc.Driver
-      url: jdbc:mysql://localhost:3306/test?useUnicode=true&characterEncoding=utf8&characterSetResults=utf8&useSSL=false
+      url: jdbc:mysql://localhost:3306/db2?useUnicode=true&characterEncoding=utf8&characterSetResults=utf8&useSSL=false
       username: root
       password: 123456
 quartz: 
   config:
     quartzs:
-    - {batch-job-name: batchJob2,job-name: job1,job-group: job-group1,job-class: com.glodon.job.MyJob,trigger-name: trigger1,trigger-group: trigger-group1,cron-expression: '*/5 * * * * ?' } 
+    - {batch-job-name: corpJob,job-name: job1,job-group: job-group1,job-class: com.glodon.quartz.job.impl.JobExecuteBatch,trigger-name: trigger1,trigger-group: trigger-group1,cron-expression: '*/20 * * * * ?' } 
     
 
       

@@ -1,4 +1,4 @@
-package com.glodon.job;
+package com.glodon.quartz.job.impl;
 
 import org.quartz.JobDataMap;
 import org.quartz.JobExecutionContext;
@@ -10,12 +10,13 @@ import org.springframework.batch.core.configuration.JobLocator;
 import org.springframework.batch.core.launch.JobLauncher;
 import org.springframework.beans.factory.annotation.Autowired;
 
+import com.glodon.quartz.job.BaseJob;
+
 import lombok.extern.slf4j.Slf4j;
 
 @Slf4j
-public class MyJob implements BaseJob {
+public class JobExecuteBatch implements BaseJob {
 
-	
 
 	@Override
 	public void execute(JobExecutionContext context) throws JobExecutionException {
@@ -28,12 +29,12 @@ public class MyJob implements BaseJob {
 	        JobLocator jobLocator = (JobLocator) jobDataMap.get("jobLocator");
 	        String jobName = jobDataMap.getString("batchJobName");
 			Job job = jobLocator.getJob(jobName);
-			JobParameters jobParameters = new JobParametersBuilder().addLong("time", time).toJobParameters();
-			jobLauncher.run(job, jobParameters);
-
 			
+			JobParameters jobParameters = new JobParametersBuilder().addLong("time", time).toJobParameters();
+			log.info("{}--{}",jobName,jobParameters);
+			jobLauncher.run(job, jobParameters);
 		} catch (Exception e) {
-			log.info("执行定时任务异常");
+			log.info("quartz 执行定时任务异常");
 			e.printStackTrace();
 		}
 	}
