@@ -19,7 +19,7 @@ public class CorpProcessor implements ItemProcessor<CorpInfo, Enterprise> {
 	@Override
 	public Enterprise process(CorpInfo item) throws Exception {
 		
-
+		
 		Enterprise ep =  new Enterprise(item.getCorpguid(),item.getCorpname(),item.getLicensenum(),item.getLegalman(),item.getLegalmanidcard(),
 				String.valueOf(item.getProvincenum()),String.valueOf(item.getCitynum()),String.valueOf(item.getCountynum()));
 		ep.setDataSource(1);

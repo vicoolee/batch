@@ -25,7 +25,7 @@ spring:
 quartz: 
   config:
     quartzs:
-    - {batch-job-name: corpJob,job-name: job1,job-group: job-group1,job-class: com.glodon.quartz.job.impl.JobExecuteBatch,trigger-name: trigger1,trigger-group: trigger-group1,cron-expression: '0 39 * * * ? *' } 
+    - {batch-job-name: corpJob,job-name: job1,job-group: job-group1,job-class: com.glodon.quartz.job.impl.JobExecuteBatch,trigger-name: trigger1,trigger-group: trigger-group1,cron-expression: '0 15 * * * ? *' } 
     
 
       

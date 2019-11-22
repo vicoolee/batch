@@ -1,10 +1,11 @@
 package com.glodon.batch.config;
 
+import java.util.ArrayList;
 import java.util.HashMap;
+import java.util.List;
 import java.util.Map;
 
 import org.apache.ibatis.session.SqlSessionFactory;
-import org.mybatis.spring.batch.MyBatisCursorItemReader;
 import org.mybatis.spring.batch.MyBatisPagingItemReader;
 import org.springframework.batch.core.Job;
 import org.springframework.batch.core.Step;
@@ -14,6 +15,9 @@ import org.springframework.batch.core.configuration.annotation.StepScope;
 import org.springframework.batch.item.ItemProcessor;
 import org.springframework.batch.item.ItemReader;
 import org.springframework.batch.item.ItemWriter;
+import org.springframework.batch.item.NonTransientResourceException;
+import org.springframework.batch.item.ParseException;
+import org.springframework.batch.item.UnexpectedInputException;
 import org.springframework.batch.item.support.ClassifierCompositeItemWriter;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Qualifier;
@@ -21,6 +25,7 @@ import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 
 import com.glodon.batch.listener.CorpJobListener;
+import com.glodon.batch.reader.MulitMybatisItemReader;
 import com.glodon.batch.writer.CorpClassifier;
 import com.glodon.batch.writer.InsertEnterpriseWriter;
 import com.glodon.batch.writer.UpdateEnterpriseWriter;
@@ -52,12 +57,12 @@ public class CorpBatch {
     }
 	
 	@Bean
-	public Step corpStep(ItemReader<CorpInfo> corpItemReader, ItemProcessor<CorpInfo, Enterprise> corpProcessor,ItemWriter<Enterprise> enterpriseCompositeItemWriter) {
+	public Step corpStep(ItemReader<CorpInfo> mulitMybatisItemReader, ItemProcessor<CorpInfo, Enterprise> corpProcessor,ItemWriter<Enterprise> enterpriseCompositeItemWriter) {
 		String funcName = Thread.currentThread().getStackTrace()[1].getMethodName();
 		log.info("funcName2:::::: {}",funcName);
 		return stepBuilderFactory.get(funcName)
 				.<CorpInfo, Enterprise>chunk(1000)
-				.reader(corpItemReader)
+				.reader(mulitMybatisItemReader)
 				.processor(corpProcessor)
 				.writer(enterpriseCompositeItemWriter)
 				.build();
@@ -65,11 +70,10 @@ public class CorpBatch {
 	
 	
 	@Bean
-	@StepScope
-	public ItemReader<CorpInfo> corpItemReader(
+	public ItemReader<CorpInfo> corpInfoItemReader(
 			@Qualifier("srcSqlSessionFactory") SqlSessionFactory sqlSessionFactory) throws Exception {
 		Map<String, Object> parameterValues = new HashMap<String, Object>();
-		parameterValues.put("queryId", "com.glodon.mapper.src.CorpInfoMapper.selectAllCorpInfo");
+		parameterValues.put("queryId", "com.glodon.mapper.src.CorpInfoMapper.selectAllCorpInfo");//com.glodon.mapper.src.CorpInfoOutCaseMapper
 		MyBatisPagingItemReader<CorpInfo> reader = new MyBatisPagingItemReader<CorpInfo>();
 		reader.setSqlSessionFactory(sqlSessionFactory);
 		reader.setPageSize(1000);
@@ -79,7 +83,36 @@ public class CorpBatch {
 	
 		return reader;
 	}
-
+	
+	@Bean
+	public ItemReader<CorpInfo> corpInfoOutCaseItemReader(
+			@Qualifier("srcSqlSessionFactory") SqlSessionFactory sqlSessionFactory) throws Exception {
+		Map<String, Object> parameterValues = new HashMap<String, Object>();
+		parameterValues.put("queryId", "com.glodon.mapper.src.CorpInfoOutCaseMapper.selectAllCorpInfoOutCase");//
+		MyBatisPagingItemReader<CorpInfo> reader = new MyBatisPagingItemReader<CorpInfo>();
+		reader.setSqlSessionFactory(sqlSessionFactory);
+		reader.setPageSize(1000);
+		reader.setParameterValues(parameterValues);
+		reader.setQueryId(parameterValues.get("queryId").toString());
+		reader.afterPropertiesSet();
+	
+		return reader;
+	}
+	
+	@Bean
+	public MulitMybatisItemReader<CorpInfo>  mulitMybatisItemReader(ItemReader<CorpInfo> corpInfoItemReader,ItemReader<CorpInfo> corpInfoOutCaseItemReader) throws UnexpectedInputException, ParseException, NonTransientResourceException, Exception{
+		
+		MulitMybatisItemReader<CorpInfo> mulitMybatisItemReader = new MulitMybatisItemReader<CorpInfo>();
+		List<ItemReader<CorpInfo>> delegates = new ArrayList<ItemReader<CorpInfo>>();
+		delegates.add(corpInfoItemReader);
+		delegates.add(corpInfoOutCaseItemReader);
+		mulitMybatisItemReader.setDelegates(delegates);
+		
+		
+		return mulitMybatisItemReader;
+	}
+	
+	
 	
 	@Bean
 	@StepScope

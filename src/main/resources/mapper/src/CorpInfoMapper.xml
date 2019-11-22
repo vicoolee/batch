@@ -46,7 +46,6 @@
     <result column="COUNTYNUM" property="countynum" jdbcType="INTEGER" />
     <result column="LegalMan" property="legalman" jdbcType="VARCHAR" />
     <result column="LEGALMANIDCARD" property="legalmanidcard" jdbcType="VARCHAR" />
-
   </resultMap>
   <!-- CorpGUID id,CORPNAME enterprise_name,LICENSENUM credit_code,LegalMan legal_name,LEGALMANIDCARD legal_identity_num,
 				PROVINCENUM province_code,CITYNUM city_code,COUNTYNUM area_code -->
