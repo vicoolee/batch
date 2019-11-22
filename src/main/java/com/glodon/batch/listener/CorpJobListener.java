@@ -13,7 +13,7 @@ public class CorpJobListener extends JobExecutionListenerSupport{
 	@Override
 	public void beforeJob(JobExecution jobExecution) {
 		if(jobExecution.getStatus() == BatchStatus.STARTED){
-			log.info("----------------------------------------------------");
+			log.info("------------------------start----------------------------");
             log.debug(" batch job start!");
         }
 	}
@@ -21,6 +21,7 @@ public class CorpJobListener extends JobExecutionListenerSupport{
     public void afterJob(JobExecution jobExecution) {
         if(jobExecution.getStatus() == BatchStatus.COMPLETED){
             log.debug(" batch job complete!");
+            log.info("-------------------------end-----------------------------");
         }
     }
 }

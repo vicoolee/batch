@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8" ?>
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
-<mapper namespace="com.glodon.mapper.CorpInfoOutCaseMapper" >
+<mapper namespace="com.glodon.mapper.dest.CorpInfoOutCaseMapper" >
   <resultMap id="BaseResultMap" type="com.glodon.entity.CorpInfoOutCase" >
     <result column="ID" property="id" jdbcType="INTEGER" />
     <result column="RecordGuid" property="recordguid" jdbcType="VARCHAR" />
@@ -30,6 +30,21 @@
     <result column="ZJTechManIDCard" property="zjtechmanidcard" jdbcType="VARCHAR" />
     <result column="ZJTechManPhone" property="zjtechmanphone" jdbcType="VARCHAR" />
   </resultMap>
+  <resultMap id="BaseResultMap2" type="com.glodon.entity.CorpInfoOutCase" >
+    <result column="RecordGuid" property="recordguid" jdbcType="VARCHAR" />
+    <result column="CorpName" property="corpname" jdbcType="VARCHAR" />
+    <result column="LicenseNum" property="licensenum" jdbcType="VARCHAR" />
+    <result column="ProvinceNum" property="provincenum" jdbcType="INTEGER" />
+    <result column="CityNum" property="citynum" jdbcType="INTEGER" />
+    <result column="CountyNum" property="countynum" jdbcType="INTEGER" />
+    <result column="LegalManName" property="legalmanname" jdbcType="VARCHAR" />
+    <result column="LegalManIDCard" property="legalmanidcard" jdbcType="VARCHAR" />
+   
+  </resultMap>
+  <select id="selectAllCorpInfoOutCase" resultMap="BaseResultMap2">
+    select RecordGuid,CorpName,LicenseNum,ProvinceNum,CityNum,CountyNum,LegalManName,LegalManIDCard
+    from fb_tbcorpbasicinfo_outcase  limit #{_pagesize} OFFSET #{_skiprows}
+  </select>
   <insert id="insert" parameterType="com.glodon.entity.CorpInfoOutCase" >
     insert into fb_tbcorpbasicinfo_outcase (ID, RecordGuid, CorpCode, 
       CorpName, LicenseNum, ProvinceNum, 

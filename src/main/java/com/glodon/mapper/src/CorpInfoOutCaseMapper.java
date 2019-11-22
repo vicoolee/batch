@@ -6,4 +6,6 @@ public interface CorpInfoOutCaseMapper {
     int insert(CorpInfoOutCase record);
 
     int insertSelective(CorpInfoOutCase record);
+    
+  
 }
