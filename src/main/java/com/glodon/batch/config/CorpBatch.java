@@ -12,6 +12,7 @@ import org.springframework.batch.core.Step;
 import org.springframework.batch.core.configuration.annotation.JobBuilderFactory;
 import org.springframework.batch.core.configuration.annotation.StepBuilderFactory;
 import org.springframework.batch.core.configuration.annotation.StepScope;
+import org.springframework.batch.core.launch.support.RunIdIncrementer;
 import org.springframework.batch.item.ItemProcessor;
 import org.springframework.batch.item.ItemReader;
 import org.springframework.batch.item.ItemWriter;
@@ -70,6 +71,7 @@ public class CorpBatch {
 	
 	
 	@Bean
+	@StepScope
 	public ItemReader<CorpInfo> corpInfoItemReader(
 			@Qualifier("srcSqlSessionFactory") SqlSessionFactory sqlSessionFactory) throws Exception {
 		Map<String, Object> parameterValues = new HashMap<String, Object>();
@@ -85,6 +87,7 @@ public class CorpBatch {
 	}
 	
 	@Bean
+	@StepScope
 	public ItemReader<CorpInfo> corpInfoOutCaseItemReader(
 			@Qualifier("srcSqlSessionFactory") SqlSessionFactory sqlSessionFactory) throws Exception {
 		Map<String, Object> parameterValues = new HashMap<String, Object>();
@@ -100,6 +103,7 @@ public class CorpBatch {
 	}
 	
 	@Bean
+	@StepScope
 	public MulitMybatisItemReader<CorpInfo>  mulitMybatisItemReader(ItemReader<CorpInfo> corpInfoItemReader,ItemReader<CorpInfo> corpInfoOutCaseItemReader) throws UnexpectedInputException, ParseException, NonTransientResourceException, Exception{
 		
 		MulitMybatisItemReader<CorpInfo> mulitMybatisItemReader = new MulitMybatisItemReader<CorpInfo>();
@@ -107,7 +111,6 @@ public class CorpBatch {
 		delegates.add(corpInfoItemReader);
 		delegates.add(corpInfoOutCaseItemReader);
 		mulitMybatisItemReader.setDelegates(delegates);
-		
 		
 		return mulitMybatisItemReader;
 	}
